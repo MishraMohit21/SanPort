@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { content } from '../data/content';
 import { SectionHeading } from './SectionHeading';
+import { ChromaGrid } from './ChromaGrid';
 import './Industries.css';
 
 export function Industries() {
@@ -41,77 +42,26 @@ export function Industries() {
           shadowColor="rgba(3, 105, 161, 0.6)"
         />
 
-        <div className="industries-content">
-          <div className="industries-grid">
-            {displayIndustries.map((ind, index) => {
+        <div className="industries-content" style={{ position: 'relative', marginTop: '40px', width: '100%' }}>
+          <ChromaGrid 
+            items={displayIndustries.map((ind, index) => {
               const imageInfo = content.industries.find(i => i.title === ind.imgTitle) || content.industries[index];
-              const isActive = activeIndex === index;
-              
-              return (
-                <motion.div 
-                  className="industry-card" 
-                  key={ind.title}
-                  onClick={() => setActiveIndex(isActive ? null : index)} // Toggle active overlay
-                  style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  animate={{
-                    borderColor: isActive ? getTextColor(ind.title) : 'rgba(255, 255, 255, 0.08)',
-                    boxShadow: isActive 
-                      ? `0 15px 30px rgba(0,0,0,0.5), 0 0 15px ${getTextColor(ind.title)}30` 
-                      : '0 10px 25px rgba(0,0,0,0.3)'
-                  }}
-                  whileHover={{ 
-                    scale: 1.03,
-                    borderColor: getTextColor(ind.title),
-                    boxShadow: `0 15px 30px rgba(0,0,0,0.5), 0 0 15px ${getTextColor(ind.title)}35`
-                  }}
-                >
-                  <img src={imageInfo?.image} alt={ind.title} className="industry-img" />
-                  <div className="industry-title" style={{ color: getTextColor(ind.title) }}>
-                    {ind.title}
-                    <div style={{ fontSize: '9px', color: '#94a3b8', marginTop: '3px', fontWeight: 'normal', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                      Click for info
-                    </div>
-                  </div>
-
-                  {/* Sliding/Fading Description Overlay */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: isActive ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'rgba(11, 19, 43, 0.96)',
-                      backdropFilter: 'blur(8px)',
-                      WebkitBackdropFilter: 'blur(8px)',
-                      padding: '24px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      textAlign: 'center',
-                      zIndex: 5,
-                      pointerEvents: isActive ? 'auto' : 'none'
-                    }}
-                  >
-                    <h4 style={{ color: getTextColor(ind.title), marginBottom: '10px', fontSize: '16px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                      {ind.title}
-                    </h4>
-                    <p style={{ fontSize: '13px', color: '#cbd5e1', lineHeight: '1.55', margin: 0, fontWeight: 500 }}>
-                      {ind.desc}
-                    </p>
-                    <div style={{ marginTop: '20px', fontSize: '9px', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 'bold' }}>
-                      Click to close
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
+              const color = getTextColor(ind.title);
+              return {
+                title: ind.title,
+                subtitle: ind.desc,
+                image: imageInfo?.image || '',
+                borderColor: color,
+                gradient: `linear-gradient(145deg, ${color}30, #000)`,
+                url: ''
+              };
             })}
-          </div>
+            columns={4}
+            radius={250}
+            damping={0.45}
+            fadeOut={0.6}
+            ease="power3.out"
+          />
         </div>
 
         <div className="industries-right">

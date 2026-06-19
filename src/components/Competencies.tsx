@@ -115,29 +115,6 @@ export function Competencies() {
             })}
           </div>
 
-          {/* Bottom row displaying inactive cards, as shown in the design mockup */}
-          <div className="comp-bottom-row">
-            {compItems.map((item, index) => {
-              if (index === activeIndex) return null;
-              return (
-                <motion.div
-                  key={index}
-                  className="comp-bottom-card"
-                  style={{
-                    border: `2px solid ${item.color}`,
-                    boxShadow: `0 8px 20px rgba(0,0,0,0.15), 0 0 10px ${item.color}15`
-                  }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h3 style={{ color: item.color }}>{item.title}</h3>
-                  <p>{item.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
 
         <div className="competencies-right">

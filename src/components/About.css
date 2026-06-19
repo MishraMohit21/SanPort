@@ -18,11 +18,7 @@
 
 .about-image-col {
   flex: 0 0 auto;
-  max-width: 280px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  background: #0d1b2a;
+  max-width: 390px; /* Scaled ~1.4x from 280px */
 }
 
 .about-photo {
@@ -33,8 +29,11 @@
 
 .about-text-col {
   flex: 1;
+  padding: 0 20px;
+}
+
+.about-text-col p {
   max-width: 580px;
-  padding: 0 10px;
 }
 
 .about-paragraph {
@@ -74,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 15px;
+  margin-left: 40px;
 }
 
 .btn-education {
@@ -114,7 +113,7 @@
   }
   
   .about-image-col {
-    max-width: 250px;
+    max-width: 350px; /* Scaled ~1.4x from 250px */
   }
   
   .about-text-col {
@@ -125,6 +124,8 @@
   
   .about-action-col {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
   }
 }

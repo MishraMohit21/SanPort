@@ -135,7 +135,10 @@
     align-items: flex-start;
   }
   .education-right {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }

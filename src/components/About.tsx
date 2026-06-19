@@ -23,7 +23,6 @@ export function About() {
             className="about-photo-wrapper"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            style={{ borderRadius: '12px', overflow: 'hidden' }}
           >
             <img src={aboutImage} alt="Sandeep Katariya" className="about-photo" />
           </motion.div>

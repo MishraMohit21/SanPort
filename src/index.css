@@ -213,7 +213,13 @@ p {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  transition: all var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-panel:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 48px -12px rgba(0, 229, 255, 0.2), 0 0 24px rgba(0, 229, 255, 0.1) inset;
+  border-color: rgba(0, 229, 255, 0.5);
 }
 
 .btn {
