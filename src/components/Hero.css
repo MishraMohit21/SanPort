@@ -1,0 +1,161 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #092e1b 0%, #061121 50%, #030814 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20vw;
+  font-weight: 900;
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: -10vh;
+  width: 100%;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 900;
+  font-size: 10.4vw; /* 1.3x scaled */
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: #e58a2d; /* Orange/gold color */
+  text-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+  margin: 0;
+  width: 100%;
+}
+
+.title-sandeep {
+  display: block;
+}
+
+.title-bottom-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.title-kata {
+  margin-right: 5vw;
+}
+
+.title-riya {
+  margin-left: 5vw;
+}
+
+.title-gap {
+  width: 25vw; /* Gap for the head */
+}
+
+.hero-person-img {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 75vh;
+  object-fit: contain;
+  z-index: 3;
+}
+
+.know-more {
+  position: absolute;
+  bottom: 120px;
+  right: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+}
+
+.know-more span {
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.know-more-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+.hero-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #5b21b6; /* Premium purple matching design */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 18px 0;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.banner-item {
+  color: white;
+  font-weight: 700;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.star-icon {
+  font-size: 18px;
+  color: #a78bfa; /* light purple highlight star */
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 14vw;
+  }
+  .title-kata { margin-right: 0; }
+  .title-riya { margin-left: 0; }
+  .title-gap { width: 35vw; }
+  .hero-banner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .banner-item {
+    font-size: 12px;
+  }
+}

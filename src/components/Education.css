@@ -1,0 +1,139 @@
+.education-section {
+  padding: 100px 0;
+  background: linear-gradient(90deg, #021a10 0%, #060b19 100%);
+  color: white;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.education-vertical-text {
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-right: 40px;
+  display: flex;
+  gap: 0;
+}
+
+.text-solid-green {
+  color: #4ade80; /* Light green matching the screenshot */
+}
+
+.education-center {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 60px; /* Aligned with the logos */
+  top: 50px;
+  bottom: 50px;
+  width: 1px;
+  background-color: #166534;
+  z-index: 1;
+}
+
+.education-card {
+  background: rgba(10, 25, 30, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  max-width: 600px;
+  border: 2px solid transparent; /* Default transparent border */
+  box-sizing: border-box;
+}
+
+.card-logo-bg {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: #c1272d; /* Red for Sorbon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.card-logo-bg.white-bg {
+  background: white;
+}
+
+.card-logo {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.card-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.card-content .year {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.card-content .institution {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.education-right {
+  flex: 0 0 auto;
+  margin-left: 40px;
+}
+
+.btn-experience {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1e1b4b; /* Dark purple */
+  color: #818cf8; /* Light purple text */
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-experience:hover {
+  background-color: #312e81;
+}
+
+@media (max-width: 992px) {
+  .education-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .education-right {
+    margin-top: 40px;
+    margin-left: 0;
+  }
+}

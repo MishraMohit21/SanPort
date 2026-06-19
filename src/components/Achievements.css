@@ -1,0 +1,146 @@
+.achievements-section {
+  padding: 100px 0;
+  background: #030814;
+  color: white;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.achievements-vertical-text {
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-right: 40px;
+  display: flex;
+  gap: 0;
+}
+
+.text-solid-orange {
+  color: #e58a2d; /* Orange matching screenshot */
+}
+
+.achievements-content {
+  flex: 1;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.achievement-card {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 300px;
+}
+
+.ach-text {
+  padding: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.ach-text h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ach-text p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(0,0,0,0.8);
+}
+
+.ach-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 144px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/* Card Colors based on screenshot */
+.card-leadership {
+  background-color: #a7f3d0; /* Light blue-green */
+}
+.card-leadership h3 { color: #047857; }
+
+.card-milestones {
+  background-color: #fecdd3; /* Pink */
+}
+.card-milestones h3 { color: #be123c; }
+
+.card-growth {
+  background-color: #bae6fd; /* Light blue */
+}
+.card-growth h3 { color: #0369a1; }
+
+.card-recognition {
+  background-color: #99f6e4; /* Light teal */
+}
+.card-recognition h3 { color: #0f766e; }
+
+.card-innovation {
+  background-color: #e9d5ff; /* Purple */
+}
+.card-innovation h3 { color: #6b21a8; }
+
+.achievements-right {
+  flex: 0 0 auto;
+  margin-left: 20px;
+}
+
+.btn-competencies {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1e3a8a; /* Dark blue */
+  color: #60a5fa; /* Light blue text */
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-competencies:hover {
+  background-color: #172554;
+}
+
+@media (max-width: 992px) {
+  .achievements-container {
+    flex-direction: column;
+  }
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .achievements-right {
+    margin-top: 40px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}

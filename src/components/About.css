@@ -1,0 +1,129 @@
+.about-section {
+  padding: 100px 0;
+  background: linear-gradient(90deg, #051429 0%, #031e13 100%);
+  color: white;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.about-image-col {
+  flex: 0 0 auto;
+  max-width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background: #0d1b2a;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text-col {
+  flex: 1;
+  max-width: 580px;
+  padding: 0 10px;
+}
+
+.about-paragraph {
+  font-size: 13.5px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  color: #cbd5e1;
+}
+
+.btn-read-more {
+  background: transparent;
+  border: none;
+  color: #00e5ff; /* Cyan accent */
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 14px;
+  border: 1px solid #00e5ff;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+}
+
+.btn-read-more:hover {
+  background-color: rgba(0, 229, 255, 0.15);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.about-action-col {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.btn-education {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #166534; /* Dark green button */
+  color: #4ade80; /* Light green text */
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-education:hover {
+  background-color: #14532d;
+  transform: translateY(-2px);
+}
+
+.arrows {
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .about-heading-col {
+    margin-right: 0;
+  }
+  
+  .about-image-col {
+    max-width: 250px;
+  }
+  
+  .about-text-col {
+    max-width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .about-action-col {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
