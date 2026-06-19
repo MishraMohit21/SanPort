@@ -145,7 +145,7 @@ p {
 .heading-shadow-text {
   position: absolute;
   font-family: 'Impact', 'Arial Black', sans-serif;
-  font-size: 110px;
+  font-size: 80px; /* Reduced from 110px to prevent clipping */
   font-weight: 900;
   letter-spacing: 0.04em;
   writing-mode: vertical-lr;
@@ -160,7 +160,7 @@ p {
 .heading-gradient-text {
   position: absolute;
   font-family: 'Impact', 'Arial Black', sans-serif;
-  font-size: 70px;
+  font-size: 55px; /* Reduced from 70px */
   font-weight: 900;
   letter-spacing: 0.04em;
   writing-mode: vertical-lr;

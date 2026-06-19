@@ -1,6 +1,6 @@
 .about-section {
   padding: 100px 0;
-  background: linear-gradient(90deg, #051429 0%, #031e13 100%);
+  background: linear-gradient(180deg, #041c10 0%, #0b1a29 100%);
   color: white;
   min-height: 80vh;
   display: flex;
@@ -88,13 +88,14 @@
   font-weight: 700;
   font-size: 12px;
   text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
   white-space: nowrap;
 }
 
 .btn-education:hover {
   background-color: #14532d;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(74, 222, 128, 0.35);
 }
 
 .arrows {

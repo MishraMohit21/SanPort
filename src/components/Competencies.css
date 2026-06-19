@@ -1,6 +1,6 @@
 .competencies-section {
   padding: 100px 0;
-  background: linear-gradient(90deg, #051429 0%, #031e13 100%);
+  background: linear-gradient(180deg, #060b19 0%, #080f21 100%);
   color: white;
   min-height: 80vh;
   display: flex;
@@ -121,11 +121,45 @@
   font-weight: 700;
   font-size: 14.5px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-industries:hover {
   background-color: #022c22;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(52, 211, 153, 0.35);
+}
+
+.comp-bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.comp-bottom-card {
+  background: #fdfbf7;
+  color: #1e293b;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  transition: transform 0.3s;
+}
+
+.comp-bottom-card h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.comp-bottom-card p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0;
+  color: #334155;
 }
 
 @media (max-width: 992px) {

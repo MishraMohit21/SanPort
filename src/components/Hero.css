@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #092e1b 0%, #061121 50%, #030814 100%);
+  background: linear-gradient(90deg, #022315 0%, #031422 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,18 +18,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20vw;
+  font-size: 19vw;
   font-weight: 900;
   line-height: 0.85;
-  color: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.02);
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
+  letter-spacing: 0.02em;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3; /* Render text in front of portrait */
   text-align: center;
   margin-top: -10vh;
   width: 100%;
@@ -51,6 +52,8 @@
 
 .title-sandeep {
   display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .title-bottom-row {
@@ -61,26 +64,42 @@
 }
 
 .title-kata {
-  margin-right: 5vw;
+  margin-right: 5px;
+  text-align: right;
+  flex: 1;
 }
 
 .title-riya {
-  margin-left: 5vw;
+  margin-left: 5px;
+  text-align: left;
+  flex: 1;
 }
 
 .title-gap {
-  width: 25vw; /* Gap for the head */
+  width: 12vw; /* Reduced from 22vw to pull text closer to visible body */
+  flex-shrink: 0;
 }
 
 .hero-person-img {
   position: absolute;
   bottom: 50px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  height: 75vh;
+  transform: translateX(-50%);
+  width: 22vw; /* Matches the text gap precisely */
+  height: auto;
   object-fit: contain;
-  z-index: 3;
+  z-index: 2; /* Position portrait behind text */
+}
+
+@keyframes vertical-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
 }
 
 .know-more {
@@ -92,12 +111,14 @@
   align-items: center;
   gap: 8px;
   z-index: 4;
+  animation: vertical-bounce 2.5s infinite ease-in-out;
 }
 
 .know-more span {
   color: #3b82f6;
   font-weight: 700;
   font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 .know-more-btn {
@@ -112,6 +133,12 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.know-more-btn:hover {
+  background-color: #2563eb;
+  transform: scale(1.1);
 }
 
 .hero-banner {
@@ -150,7 +177,13 @@
   }
   .title-kata { margin-right: 0; }
   .title-riya { margin-left: 0; }
-  .title-gap { width: 35vw; }
+  .title-gap { width: 26vw; }
+  .hero-person-img {
+    width: 26vw; /* Matches mobile gap width */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+  }
   .hero-banner {
     flex-wrap: wrap;
     gap: 10px;

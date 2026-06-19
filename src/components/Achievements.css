@@ -1,6 +1,6 @@
 .achievements-section {
   padding: 100px 0;
-  background: #030814;
+  background: linear-gradient(180deg, #080f21 0%, #0b081c 100%);
   color: white;
   min-height: 80vh;
   display: flex;
@@ -119,11 +119,13 @@
   font-weight: 700;
   font-size: 14.5px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-competencies:hover {
   background-color: #172554;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.35);
 }
 
 @media (max-width: 992px) {

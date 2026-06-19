@@ -1,6 +1,6 @@
 .footer-section {
   padding: 100px 0;
-  background: #030814;
+  background: linear-gradient(180deg, #050812 0%, #020408 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -34,6 +34,15 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: #f97316; /* Glowing orange matching section theme */
+  box-shadow: 0 12px 28px rgba(249, 115, 22, 0.18);
 }
 
 .contact-icon {
@@ -45,6 +54,11 @@
   font-size: 34px;
   font-weight: 700;
   color: white;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.1);
 }
 
 .contact-info h4 {

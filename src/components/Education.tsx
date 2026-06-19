@@ -16,6 +16,7 @@ export function Education() {
       institution: "Ecole Supérieure Robert de Sorbon",
       logo: content.education.items[0].logo,
       color: "#22c55e",
+      logoBg: "#c1272d", // Sorbon Red
       details: "Focused on modernizing agriculture production lines, supply chain mapping, and integration of sustainable operations. Thesis centered on smart logistics and eco-friendly manufacturing automation."
     },
     {
@@ -26,6 +27,7 @@ export function Education() {
       institution: "Swami Keshvanand Institute of Technology (SKIT)",
       logo: content.education.items[1].logo,
       color: "#4ade80",
+      logoBg: "#ffffff", // SKIT White
       details: "Studied core mechanical engineering disciplines including machine design, operations management, thermodynamics, and automation systems. Lead engineer for final year pneumatic material handling design project."
     }
   ];
@@ -62,7 +64,7 @@ export function Education() {
                 whileHover={{ opacity: 0.9, scale: 1.0 }}
                 transition={{ type: 'spring', stiffness: 250, damping: 20 }}
               >
-                <div className="card-logo-bg" style={{ borderColor: isActive ? item.color : 'transparent' }}>
+                <div className="card-logo-bg" style={{ backgroundColor: item.logoBg, borderColor: isActive ? item.color : 'transparent' }}>
                   <img src={item.logo} alt={item.institution} className="card-logo" />
                 </div>
                 <div className="card-content">

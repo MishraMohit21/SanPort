@@ -1,6 +1,6 @@
 .experience-section {
   padding: 100px 0;
-  background: #030814;
+  background: linear-gradient(180deg, #021a10 0%, #060b19 100%);
   color: white;
   min-height: 80vh;
   display: flex;
@@ -233,11 +233,13 @@
   font-weight: 700;
   font-size: 12px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-achievements:hover {
   background-color: #7c2d12;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
 }
 
 .green-footer { background-color: #166534; color: white; }

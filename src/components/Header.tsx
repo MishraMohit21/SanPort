@@ -5,33 +5,70 @@ import './Header.css';
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
+
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 180; // Trigger threshold
+      const sections = ['home', 'about', 'education', 'experience', 'competencies', 'achievements', 'industries', 'contact'];
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScrollSpy);
+    
+    // Initial call
+    handleScroll();
+    handleScrollSpy();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollSpy);
+    };
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home', active: true },
-    { name: 'About Me', href: '#about', active: false },
-    { name: 'Education', href: '#education', active: false },
-    { name: 'Experience', href: '#experience', active: false },
-    { name: 'Competencies', href: '#competencies', active: false },
-    { name: 'Achievements', href: '#achievements', active: false },
-    { name: 'Industries', href: '#industries', active: false },
-    { name: 'Contact', href: '#contact', active: false },
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Education', href: '#education', id: 'education' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Competencies', href: '#competencies', id: 'competencies' },
+    { name: 'Achievements', href: '#achievements', id: 'achievements' },
+    { name: 'Industries', href: '#industries', id: 'industries' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container header-container">
-        
+      <div className="header-container">
+        <a href="#home" className="nav-logo" onClick={() => setActiveSection('home')}>
+          <span className="logo-sk">SK</span>
+          <span className="logo-dot">.</span>
+        </a>
+
         <nav className="desktop-nav">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className={`nav-link ${link.active ? 'active' : ''}`}>
+            <a 
+              key={link.name} 
+              href={link.href} 
+              className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
+              onClick={() => setActiveSection(link.id)}
+            >
               {link.name}
             </a>
           ))}
@@ -40,6 +77,7 @@ export function Header() {
         <button 
           className="mobile-menu-btn" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
@@ -51,8 +89,11 @@ export function Header() {
             <a 
               key={link.name} 
               href={link.href} 
-              className={`mobile-nav-link ${link.active ? 'active' : ''}`}
-              onClick={() => setMobileMenuOpen(false)}
+              className={`mobile-nav-link ${activeSection === link.id ? 'active' : ''}`}
+              onClick={() => {
+                setActiveSection(link.id);
+                setMobileMenuOpen(false);
+              }}
             >
               {link.name}
             </a>

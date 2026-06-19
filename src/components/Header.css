@@ -1,94 +1,166 @@
+/* Redesigned Floating Glassmorphic Pill Navbar */
 .header {
-  position: absolute; /* Overlays on hero background */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  padding: 30px 0;
-  background: transparent;
+  position: fixed; /* Always accessible floating navbar */
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 90%;
+  max-width: 1050px;
+  padding: 10px 24px;
+  background: rgba(11, 19, 43, 0.4); /* Transparent dark base */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+/* Scrolled visual state: contracts, darkens, gets a subtle glowing accent */
 .header.scrolled {
-  position: fixed;
-  padding: 15px 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  top: 14px;
+  max-width: 960px;
+  background: rgba(6, 11, 25, 0.82);
+  border-color: rgba(229, 138, 45, 0.25); /* Glowing golden border accent */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(229, 138, 45, 0.08);
 }
 
 .header-container {
   display: flex;
-  justify-content: center; /* Center the nav items */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
+/* Sleek Monogram Logo */
+.nav-logo {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-sk {
+  color: white;
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-dot {
+  color: #e58a2d; /* Matching portfolio orange/gold theme */
+  text-shadow: 0 0 10px rgba(229, 138, 45, 0.5);
+}
+
+/* Center Desktop Navigation */
 .desktop-nav {
   display: none;
   align-items: center;
-  gap: 40px;
+  gap: 8px; /* Gap between pill nav items */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 868px) {
   .desktop-nav {
     display: flex;
   }
 }
 
+/* Premium Rounded Nav Links */
 .nav-link {
-  color: white;
+  color: #94a3b8; /* Slate text */
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  transition: color 0.2s;
   letter-spacing: 0.5px;
-}
-
-.nav-link.active {
-  color: #e58a2d; /* Orange/gold */
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap; /* Prevent wrapping onto multiple lines */
 }
 
 .nav-link:hover {
-  color: #e58a2d;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
 }
 
+/* Active Navigation Capsule Style */
+.nav-link.active {
+  color: #e58a2d;
+  background: rgba(229, 138, 45, 0.1);
+  border-color: rgba(229, 138, 45, 0.35);
+  box-shadow: 0 4px 15px rgba(229, 138, 45, 0.12);
+}
+
+/* Hamburger button on Mobile */
 .mobile-menu-btn {
   display: block;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
+  transition: transform 0.2s;
+  padding: 4px;
 }
 
-@media (min-width: 768px) {
+.mobile-menu-btn:hover {
+  transform: scale(1.1);
+  color: #e58a2d;
+}
+
+@media (min-width: 868px) {
   .mobile-menu-btn {
     display: none;
   }
 }
 
+/* Dropdown Navigation Menu for Mobile */
 .mobile-nav {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 12px);
   left: 0;
   right: 0;
-  background: #061121;
-  padding: 20px;
+  background: rgba(6, 11, 25, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  gap: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(229, 138, 45, 0.05);
+  z-index: 99;
 }
 
 .mobile-nav-link {
-  color: white;
+  color: #cbd5e1;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Prevent wrapping onto multiple lines */
 }
 
+.mobile-nav-link:hover,
 .mobile-nav-link.active {
   color: #e58a2d;
+  background: rgba(229, 138, 45, 0.08);
+  border-color: rgba(229, 138, 45, 0.2);
 }

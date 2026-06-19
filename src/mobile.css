@@ -1,0 +1,632 @@
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS PATCH (mobile.css)
+   Preserves all desktop styles, overrides layout bugs on small viewports.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GLOBAL & TOUCH TARGET DEFAULTS
+   -------------------------------------------------------------------------- */
+button,
+a,
+.btn,
+.btn-read-more,
+.btn-education,
+.btn-experience,
+.btn-achievements,
+.btn-competencies,
+.btn-industries,
+.btn-contact,
+.know-more-btn,
+.mobile-menu-btn,
+.experience-card,
+.achievement-card,
+.industry-card,
+.comp-item {
+  touch-action: manipulation;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px !important; /* Prevent iOS Auto-Zoom on form fields */
+}
+
+/* Fallback for overflow tables if added in the future */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-hero-body {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   TABLET BREAKPOINT: max-width: 768px
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Reset CSS Zoom layout property to prevent scaling bugs and overflow */
+  #about, 
+  #education, 
+  #experience, 
+  #competencies, 
+  #achievements, 
+  #industries, 
+  footer {
+    zoom: 1 !important;
+  }
+
+  /* Typography Clamping */
+  h1 {
+    font-size: clamp(2.25rem, 8vw, 3.25rem) !important;
+    line-height: 1.1 !important;
+  }
+  h2 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+  }
+  h3 {
+    font-size: clamp(1.25rem, 4.5vw, 1.5rem) !important;
+  }
+  p {
+    font-size: clamp(0.875rem, 3.5vw, 1rem) !important;
+  }
+
+  /* Viewport Height Safeties */
+  .hero-section {
+    min-height: 100dvh !important; /* iOS address bar fix */
+  }
+  .about-section,
+  .education-section,
+  .experience-section,
+  .competencies-section,
+  .achievements-section,
+  .industries-section {
+    min-height: auto !important; /* Allow natural layout growth */
+  }
+
+  /* Floating Pill Navbar with Safe Area Support */
+  .header {
+    top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+    padding: 8px 16px !important;
+    width: 92% !important;
+  }
+
+  .mobile-menu-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    border-radius: 50%;
+  }
+
+  .mobile-nav {
+    top: calc(100% + 8px) !important;
+    border-radius: 20px !important;
+    padding: 12px !important;
+  }
+
+  .mobile-nav-link {
+    padding: 12px 20px !important;
+    min-height: 44px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    align-items: center;
+    border-radius: 12px !important;
+  }
+
+  /* =============================================
+     REDESIGNED MOBILE HERO — Vertical Stack Layout
+     ============================================= */
+
+  /* Hide all desktop hero elements */
+  .desktop-only-text,
+  .desktop-hero-content,
+  .desktop-hero-img,
+  .desktop-know-more,
+  .desktop-hero-banner {
+    display: none !important;
+  }
+
+  .mobile-hero-body {
+    position: absolute;
+    inset: 0;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calc(70px + env(safe-area-inset-top, 0px)) 24px calc(24px + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
+    z-index: 5;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  /* Ambient grid & glow behind everything */
+  .mobile-ambient-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 50% 35%, rgba(0, 229, 255, 0.1) 0%, transparent 55%),
+      linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+    background-size: 100%, 28px 28px, 28px 28px;
+    background-position: center;
+    mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Portrait — centered in upper area */
+  .mobile-hero-photo-col {
+    position: relative;
+    width: 90vw; /* Even larger scale */
+    max-width: 380px; /* Even larger scale */
+    aspect-ratio: 3 / 3.6;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 2;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+  }
+
+  /* Glow behind portrait */
+  .portrait-glow {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px; /* Even larger scale */
+    height: 320px; /* Even larger scale */
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.2) 0%, transparent 70%);
+    z-index: 0;
+    filter: blur(20px);
+  }
+
+  .mobile-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    z-index: 1;
+    position: relative;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+  }
+
+  /* Info container below portrait */
+  .mobile-hero-info {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    gap: 8px;
+  }
+
+  /* Large name heading */
+  .mobile-hero-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em;
+    color: #e58a2d;
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    gap: 2px;
+  }
+
+  /* Thin divider line */
+  .mobile-hero-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.5), transparent);
+    border-radius: 1px;
+    margin: 4px 0;
+  }
+
+  .mobile-eyebrow {
+    color: #a78bfa;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .mobile-tagline {
+    color: #94a3b8;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 2px 0 8px !important;
+    font-weight: 400;
+    max-width: 300px;
+  }
+
+  .mobile-cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  /* Primary Button */
+  .mobile-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e58a2d;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 24px;
+    text-decoration: none;
+    min-height: 44px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 16px rgba(229, 138, 45, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  .mobile-btn-primary:active {
+    transform: scale(0.97);
+    background-color: #c07220;
+  }
+
+  /* Secondary Link */
+  .mobile-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    color: #cbd5e1;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    min-height: 44px;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    transition: color 0.2s;
+  }
+  .mobile-btn-secondary:active {
+    color: white;
+  }
+
+  /* Scroll Indicator Dots */
+  .mobile-scroll-dots {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 10;
+  }
+
+  .scroll-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    background-clip: content-box;
+    padding: 19px 12px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  .scroll-dot.active {
+    background-color: #e58a2d;
+    box-shadow: 0 0 8px rgba(229, 138, 45, 0.6);
+  }
+
+  /* Experience Layout Fix: stack header and content vertically */
+  .experience-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  /* Competencies Bottom Row Hide */
+  .comp-bottom-row {
+    display: none !important;
+  }
+
+  /* Achievements Section Grid height issue fix */
+  .achievement-card {
+    height: auto !important;
+    min-height: 300px !important;
+    padding-bottom: 24px !important; /* Give padding for absolute detail text */
+  }
+
+  /* Companies Accordion Tuning */
+  .experience-card.expanded {
+    height: 550px !important;
+  }
+  .expanded-content {
+    height: 550px !important;
+    width: 100% !important;
+  }
+  .exp-card-img {
+    height: 240px !important;
+  }
+  .exp-card-bullets {
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 16px !important;
+  }
+  .exp-card-footer {
+    padding: 12px 16px !important;
+  }
+  .vertical-title {
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Footer Redesigned Mobile Layout */
+  .footer-section {
+    padding: 60px 0 40px !important;
+  }
+
+  .footer-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  /* Move image above the contact cards */
+  .footer-right {
+    order: -1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .footer-image-wrapper {
+    max-width: 180px !important;
+    width: 180px !important;
+    height: 180px !important;
+    padding-top: 0 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 2px solid rgba(249, 115, 22, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(180, 83, 9, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .footer-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+
+  .brown-glow {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  .footer-content {
+    width: 100% !important;
+  }
+
+  .contact-cards {
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+
+  .contact-card {
+    padding: 18px 16px !important;
+    gap: 16px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE BREAKPOINT: max-width: 480px
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  /* Fluid Container Margins */
+  .container {
+    padding: 0 1.25rem !important; /* 20px horizontal margin */
+  }
+
+
+
+  /* About Touch Targets & Spacing */
+  .about-container {
+    gap: 20px !important;
+  }
+
+  .btn-read-more {
+    padding: 12px 20px !important;
+    font-size: 13px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-education {
+    padding: 14px 28px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Education Vertical Layout Stacking */
+  .education-center {
+    padding-left: 0 !important;
+    gap: 24px !important;
+  }
+
+  .timeline-line {
+    display: none !important; /* Hide timeline line when elements stack vertically */
+  }
+
+  .education-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 16px !important;
+    width: 100% !important;
+  }
+
+  .card-logo-bg {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 8px !important;
+  }
+
+  .btn-experience {
+    padding: 14px 28px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Companies Accordion Adjustments */
+  .experience-card {
+    height: 70px !important;
+  }
+  
+  .experience-card.expanded {
+    height: 520px !important;
+  }
+
+  .expanded-content {
+    height: 520px !important;
+    width: 100% !important;
+  }
+
+  .exp-card-img {
+    height: 220px !important;
+  }
+
+  .exp-card-bullets {
+    padding: 12px 16px !important;
+  }
+
+  .exp-card-footer {
+    padding: 12px 16px !important;
+  }
+
+  .collapsed-content {
+    padding: 10px 16px !important;
+    gap: 12px !important;
+  }
+
+  .vertical-title {
+    font-size: 12px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  .btn-achievements {
+    padding: 14px 28px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Competencies Fluid Tooltip */
+  .comp-top-row {
+    gap: 20px !important;
+  }
+
+  .comp-tooltip {
+    width: 100% !important;
+    max-width: 280px !important;
+    box-sizing: border-box !important;
+    padding: 16px !important;
+  }
+
+  .btn-industries {
+    padding: 14px 28px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Achievements Action CTA Touch Target */
+  .btn-competencies {
+    padding: 14px 28px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Industries 1-Column Responsive Grid */
+  .industries-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .industry-card {
+    height: 240px !important;
+  }
+
+  .industry-img {
+    height: 150px !important;
+  }
+
+  .btn-contact {
+    padding: 14px 28px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Footer Layout Padding Enhancements */
+  .contact-cards {
+    gap: 16px !important;
+  }
+
+  .contact-card {
+    padding: 20px !important;
+    gap: 16px !important;
+  }
+
+  .contact-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 24px !important;
+  }
+
+  .contact-info h4 {
+    font-size: 15px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .contact-info p {
+    font-size: 13px !important;
+  }
+}
