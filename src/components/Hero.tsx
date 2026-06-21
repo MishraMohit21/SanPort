@@ -76,8 +76,8 @@ export function Hero() {
         src={content.hero.image} 
         alt="Sandeep Katariya" 
         className="hero-person-img desktop-hero-img" 
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 100, x: "-50%" }}
+        animate={{ opacity: 1, y: 0, x: "-50%" }}
         transition={{ duration: 0.8, delay: 0.2 }}
       />
 

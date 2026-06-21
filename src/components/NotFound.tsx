@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+// @ts-ignore
 import FuzzyText from './FuzzyText';
 
 export function NotFound() {

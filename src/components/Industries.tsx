@@ -1,12 +1,11 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { content } from '../data/content';
 import { SectionHeading } from './SectionHeading';
+// @ts-ignore
 import { ChromaGrid } from './ChromaGrid';
 import './Industries.css';
 
 export function Industries() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null); // Track active card index for overlay
 
   const getTextColor = (title: string) => {
     switch(title) {

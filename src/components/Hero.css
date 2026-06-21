@@ -30,9 +30,8 @@
 
 .hero-content {
   position: relative;
-  z-index: 3; /* Render text in front of portrait */
   text-align: center;
-  margin-top: -10vh;
+  margin-top: -18vh; /* Pull the entire block up so the tight text fits above the portrait */
   width: 100%;
 }
 
@@ -51,16 +50,19 @@
 }
 
 .title-sandeep {
+  position: relative;
+  z-index: 1; /* Place SANDEEP behind the portrait */
   display: block;
   width: 100%;
   text-align: center;
 }
 
 .title-bottom-row {
+  position: relative;
+  z-index: 3; /* Place KATA RIYA in front of the portrait */
   display: flex;
   justify-content: center;
   width: 100%;
-  position: relative;
 }
 
 .title-kata {
@@ -81,13 +83,15 @@
 }
 
 .hero-person-img {
-  position: absolute;
+  position: absolute;     
   bottom: 50px;
+  left: 50%;
   transform: translateX(-50%);
-  width: 22vw; /* Matches the text gap precisely */
+  width: 24vw; /* Scaled down slightly so the head doesn't reach the top text */
+  max-height: 80vh;
   height: auto;
   object-fit: contain;
-  z-index: 2; /* Position portrait behind text */
+  z-index: 2; /* Portrait is sandwiched between SANDEEP and KATA RIYA */
 }
 
 @keyframes vertical-bounce {
@@ -169,6 +173,18 @@
 .star-icon {
   font-size: 18px;
   color: #a78bfa; /* light purple highlight star */
+}
+
+/* ---------------------------------------------------
+   Tablet & Narrow Desktop Adjustments (769px - 1200px)
+   --------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .hero-content {
+    margin-top: 18vh; /* Pushed the text heavily DOWN so it meets the portrait at the bottom of the tall screen */
+  }
+  .hero-person-img {
+    width: 36vw; /* Increase portrait width so it meets the text properly */
+  }
 }
 
 @media (max-width: 768px) {
