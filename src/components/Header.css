@@ -38,10 +38,6 @@
 
 /* Sleek Monogram Logo */
 .nav-logo {
-  font-family: 'Outfit', 'Inter', sans-serif;
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -50,19 +46,20 @@
 }
 
 .nav-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-.logo-sk {
-  color: white;
-  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.header-logo-img {
+  height: 34px; /* Balanced size for the navbar */
+  width: auto;
+  max-width: 150px;
+  display: block;
+  object-fit: contain;
+  transition: filter 0.3s ease;
 }
 
-.logo-dot {
-  color: #e58a2d; /* Matching portfolio orange/gold theme */
-  text-shadow: 0 0 10px rgba(229, 138, 45, 0.5);
+.nav-logo:hover .header-logo-img {
+  filter: drop-shadow(0 0 8px rgba(229, 138, 45, 0.4));
 }
 
 /* Center Desktop Navigation */

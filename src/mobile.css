@@ -385,60 +385,62 @@ select {
     padding: 60px 0 40px !important;
   }
 
-  .footer-container {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0 !important;
-  }
-
-  /* Move image above the contact cards */
-  .footer-right {
-    order: -1 !important;
-    margin-top: 0 !important;
-    margin-bottom: 24px !important;
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  .footer-image-wrapper {
-    max-width: 180px !important;
-    width: 180px !important;
-    height: 180px !important;
-    padding-top: 0 !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    background: rgba(255, 255, 255, 0.06) !important;
-    border: 2px solid rgba(249, 115, 22, 0.3) !important;
-    box-shadow: 0 8px 32px rgba(180, 83, 9, 0.2) !important;
+  .footer-grid-layout {
     display: flex !important;
-    align-items: center !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    margin-top: 30px !important;
+  }
+
+  .footer-right-col {
+    order: -1 !important;
+    width: 100% !important;
     justify-content: center !important;
   }
 
-  .footer-photo {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: top center !important;
+  .premium-image-frame {
+    max-width: 240px !important;
+    aspect-ratio: 3 / 3.5 !important;
+    border-radius: 16px !important;
   }
 
-  .brown-glow {
-    width: 140px !important;
-    height: 140px !important;
+  .premium-contact-card {
+    padding: 24px 20px !important;
+    border-radius: 16px !important;
   }
 
-  .footer-content {
-    width: 100% !important;
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
   }
 
-  .contact-cards {
-    max-width: 100% !important;
-    gap: 14px !important;
+  .quick-emails {
+    gap: 12px !important;
   }
 
-  .contact-card {
-    padding: 18px 16px !important;
+  .email-badge {
+    padding: 10px 14px !important;
+    min-width: 100% !important;
+  }
+
+  .badge-val {
+    font-size: 12.5px !important;
+  }
+
+  .form-action-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
     gap: 16px !important;
+  }
+
+  .status-banner {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .premium-submit {
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -606,27 +608,20 @@ select {
   }
 
   /* Footer Layout Padding Enhancements */
-  .contact-cards {
-    gap: 16px !important;
+  .premium-contact-card {
+    padding: 20px 16px !important;
   }
 
-  .contact-card {
-    padding: 20px !important;
-    gap: 16px !important;
+  .email-badge {
+    padding: 8px 12px !important;
   }
 
-  .contact-icon {
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 24px !important;
+  .badge-icon {
+    width: 28px !important;
+    height: 28px !important;
   }
 
-  .contact-info h4 {
-    font-size: 15px !important;
-    margin-bottom: 4px !important;
-  }
-
-  .contact-info p {
-    font-size: 13px !important;
+  .badge-val {
+    font-size: 11.5px !important;
   }
 }

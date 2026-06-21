@@ -1,87 +1,258 @@
-import { motion } from 'framer-motion';
+import { useState, type FormEvent } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { content } from '../data/content';
 import { SectionHeading } from './SectionHeading';
+import { Mail, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import './Footer.css';
 
 export function Footer() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus('error');
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    setStatus('loading');
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/mishraloopmohit@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: `New Portfolio Inquiry: ${formData.subject || 'No Subject'}`,
+          message: formData.message,
+          _replyto: formData.email
+        })
+      });
+
+      const result = await response.json();
+      if (response.ok && (result.success === "true" || result.success === true)) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+        setErrorMessage(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus('error');
+      setErrorMessage('Network error. Please check your connection and try again.');
+    }
+  };
+
   return (
     <footer id="contact" className="footer-section">
-      <div className="container footer-container">
+      {/* Premium ambient glows */}
+      <div className="footer-bg-glow glow-1"></div>
+      <div className="footer-bg-glow glow-2"></div>
+
+      <div className="container">
         <SectionHeading 
           title="GET IN TOUCH" 
           textGradient="linear-gradient(180deg, #a855f7 0%, #9333ea 40%, #7e22ce 70%, #6b21a8 100%)"
           shadowColor="rgba(107, 33, 168, 0.6)"
         />
 
-        <div className="footer-content">
-          <div className="contact-cards">
-            
+        <div className="footer-grid-layout">
+          
+          {/* Left: Unified Premium Glassmorphic Card */}
+          <div className="footer-left-col">
             <motion.div 
-              className="contact-card"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="premium-contact-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="contact-icon">@</div>
-              <div className="contact-info">
-                <h4>Email Address</h4>
-                <p>sandeepkatariya@gmail.com</p>
-              </div>
-            </motion.div>
+              {/* Tech corner accents */}
+              <div className="card-corner top-left"></div>
+              <div className="card-corner top-right"></div>
+              <div className="card-corner bottom-left"></div>
+              <div className="card-corner bottom-right"></div>
 
-            <motion.div 
-              className="contact-card"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z"/>
-                </svg>
+              <div className="card-header">
+                <h3 className="form-title">Send a Message</h3>
+                <p className="form-subtitle">Have a query, business proposal, or collaboration idea? Drop a line below.</p>
               </div>
-              <div className="contact-info">
-                <h4>Phone Number</h4>
-                <p>+91-9829011076</p>
-              </div>
-            </motion.div>
 
-            <motion.div 
-              className="contact-card"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <div className="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
-                </svg>
+              {/* Email quick links */}
+              <div className="quick-emails">
+                <a href="mailto:Sandeep.katariya@krishvana.com" className="email-badge">
+                  <div className="badge-icon">
+                    <Mail size={16} />
+                  </div>
+                  <div className="badge-details">
+                    <span className="badge-label">Primary Business</span>
+                    <span className="badge-val">Sandeep.katariya@krishvana.com</span>
+                  </div>
+                </a>
+                
+                <a href="mailto:sandeepkatariya@gmail.com" className="email-badge">
+                  <div className="badge-icon">
+                    <Mail size={16} />
+                  </div>
+                  <div className="badge-details">
+                    <span className="badge-label">Alternative / Personal</span>
+                    <span className="badge-val">sandeepkatariya@gmail.com</span>
+                  </div>
+                </a>
               </div>
-              <div className="contact-info">
-                <h4>Address</h4>
-                <p>Choudhary Dhaba, Marudhar Vihar,<br/>Khatipura Road, Jaipur, Rajasthan - 302012</p>
-              </div>
-            </motion.div>
 
+              {/* Inquiry Form */}
+              <form onSubmit={handleSubmit} className="premium-form">
+                <div className="form-row">
+                  <div className="input-group">
+                    <input 
+                      type="text" 
+                      id="name"
+                      name="name" 
+                      placeholder=" "
+                      value={formData.name} 
+                      onChange={handleChange} 
+                      required 
+                      disabled={status === 'loading'}
+                    />
+                    <label htmlFor="name">Your Name *</label>
+                    <div className="input-line"></div>
+                  </div>
+
+                  <div className="input-group">
+                    <input 
+                      type="email" 
+                      id="email"
+                      name="email" 
+                      placeholder=" "
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      required 
+                      disabled={status === 'loading'}
+                    />
+                    <label htmlFor="email">Your Email *</label>
+                    <div className="input-line"></div>
+                  </div>
+                </div>
+
+                <div className="input-group">
+                  <input 
+                    type="text" 
+                    id="subject"
+                    name="subject" 
+                    placeholder=" "
+                    value={formData.subject} 
+                    onChange={handleChange} 
+                    disabled={status === 'loading'}
+                  />
+                  <label htmlFor="subject">Subject</label>
+                  <div className="input-line"></div>
+                </div>
+
+                <div className="input-group">
+                  <textarea 
+                    id="message"
+                    name="message" 
+                    placeholder=" "
+                    value={formData.message} 
+                    onChange={handleChange} 
+                    required 
+                    rows={4}
+                    disabled={status === 'loading'}
+                  ></textarea>
+                  <label htmlFor="message">Message *</label>
+                  <div className="input-line"></div>
+                </div>
+
+                <div className="form-action-row">
+                  <AnimatePresence mode="wait">
+                    {status === 'success' && (
+                      <motion.div 
+                        className="status-banner success"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 10 }}
+                      >
+                        <CheckCircle2 size={16} />
+                        <span>Inquiry sent successfully!</span>
+                      </motion.div>
+                    )}
+                    {status === 'error' && (
+                      <motion.div 
+                        className="status-banner error"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 10 }}
+                      >
+                        <AlertCircle size={16} />
+                        <span>{errorMessage}</span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <button 
+                    type="submit" 
+                    className={`premium-submit ${status === 'loading' ? 'loading' : ''}`}
+                    disabled={status === 'loading'}
+                  >
+                    <span className="submit-btn-glow"></span>
+                    <span className="submit-btn-text">
+                      {status === 'loading' ? (
+                        <>
+                          <Loader2 className="spinner" size={16} />
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={15} />
+                          <span>Send Inquiry</span>
+                        </>
+                      )}
+                    </span>
+                  </button>
+                </div>
+              </form>
+
+            </motion.div>
           </div>
-        </div>
 
-        <div className="footer-right">
-          <motion.div 
-            className="footer-image-wrapper"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="brown-glow"></div>
-            <img src={content.about.photo} alt="Sandeep Katariya" className="footer-photo" />
-          </motion.div>
-        </div>
+          {/* Right: Portrait Image with premium tech frame */}
+          <div className="footer-right-col">
+            <motion.div 
+              className="premium-image-frame"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Sci-fi frame corners */}
+              <div className="hud-corner top-left"></div>
+              <div className="hud-corner top-right"></div>
+              <div className="hud-corner bottom-left"></div>
+              <div className="hud-corner bottom-right"></div>
+              
+              <div className="glow-backdrop"></div>
+              <img src={content.about.photo} alt="Sandeep Katariya" className="premium-photo" />
+            </motion.div>
+          </div>
 
+        </div>
       </div>
     </footer>
   );

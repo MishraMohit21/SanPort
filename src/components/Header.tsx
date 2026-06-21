@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 import './Header.css';
 
 export function Header() {
@@ -57,8 +58,7 @@ export function Header() {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <a href="#home" className="nav-logo" onClick={() => setActiveSection('home')}>
-          <span className="logo-sk">SK</span>
-          <span className="logo-dot">.</span>
+          <img src={logoImg} alt="Dr. Sandeep Katariya" className="header-logo-img" />
         </a>
 
         <nav className="desktop-nav">
