@@ -8,7 +8,7 @@ import krishnaFlour from '../assets/KrishnaFlourMIll.png';
 import krishvanaFlour from '../assets/KrishvanaFlour.png';
 import krishvanaInfra from '../assets/KrishvanaInfra.png';
 import lunarEdge from '../assets/Lunaredge.png';
-import hotelKrishvanaLogo from '../assets/HotelKrishVanaLogo.svg';
+import hotelKrishvanaLogo from '../assets/KrishvanaInnlogo.jpeg';
 
 // Education
 import logoSkit from '../assets/logo_skit.png';
@@ -28,7 +28,7 @@ import importExportImg from '../assets/import_export_new_1782139643638.png';
 import flyoverImg from '../assets/infrastructure_new_1782139533397.png';
 import flourMillImg from '../assets/flour_mill_new_1782139595598.png';
 import eduIndustryImg from '../assets/education_new_1782139658084.png';
-import hotelImg from '../assets/hotel_new.png';
+import hotelImg from '../assets/HospitalityImage.jpeg';
 
 // Achievements
 import achGrowth from '../assets/ach_growth_new_1782140653024.png';
