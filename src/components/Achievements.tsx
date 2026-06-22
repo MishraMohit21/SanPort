@@ -61,7 +61,7 @@ export function Achievements() {
         <SectionHeading 
           title="ACHIEVEMENTS" 
           textGradient="linear-gradient(180deg, #b84800 0%, #ff8c00 40%, #e06000 70%, #c05000 100%)"
-          shadowColor="rgba(80, 35, 5, 0.6)"
+          shadowColor="rgba(249, 115, 22, 0.45)"
         />
 
         <div className="achievements-content">

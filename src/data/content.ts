@@ -29,11 +29,11 @@ import flourMillImg from '../assets/flour_mill_new_1782139595598.png';
 import eduIndustryImg from '../assets/education_new_1782139658084.png';
 
 // Achievements
-import achGrowth from '../assets/achievement_growth.png';
-import achInnovation from '../assets/achievement_innovation.png';
-import achLeadership from '../assets/achievement_leadership.png';
-import achMilestones from '../assets/achievement_milestones.png';
-import achTrophy from '../assets/achievement_trophy.png';
+import achGrowth from '../assets/ach_growth_new_1782140653024.png';
+import achInnovation from '../assets/ach_innovation_new_1782140697213.png';
+import achLeadership from '../assets/ach_leadership_new_1782140610864.png';
+import achMilestones from '../assets/ach_milestones_new_1782140631299.png';
+import achTrophy from '../assets/ach_trophy_new_1782140673776.png';
 
 // Competencies
 import compBusiness from '../assets/comp_business.png';
