@@ -29,10 +29,10 @@ export function Footer() {
 
     setStatus('loading');
     try {
-      const response = await fetch("https://formsubmit.co/ajax/mishraloopmohit@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/Sandeepkatariya@krishvana.com", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json", 
           "Accept": "application/json"
         },
         body: JSON.stringify({
