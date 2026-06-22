@@ -10,7 +10,7 @@ export function Companies() {
       name: 'Krishna Flour Mill',
       fullName: 'Krishna Flour Mill',
       role: '- Partner',
-      colorClass: 'green-footer',
+      colorClass: 'green-header',
       logoName: 'Krishna Flour Mill',
       imgTitle: 'Flour Milling',
       bullets: [
@@ -25,7 +25,7 @@ export function Companies() {
       name: 'Lunar Edge',
       fullName: 'LunarEdge IT Services Private Limited',
       role: '- Director',
-      colorClass: 'blue-footer',
+      colorClass: 'blue-header',
       logoName: 'Lunar Edge',
       imgTitle: 'IT & Technology',
       bullets: [
@@ -39,7 +39,7 @@ export function Companies() {
       name: 'Krish Logix',
       fullName: 'Krishlogix Private Limited',
       role: '- Director',
-      colorClass: 'purple-footer',
+      colorClass: 'purple-header',
       logoName: 'Krish Logix',
       imgTitle: 'Ports & Shipping',
       bullets: [
@@ -53,7 +53,7 @@ export function Companies() {
       name: 'Krishvana Infra',
       fullName: 'Krishvana Infrastructure Private Limited',
       role: '- Director',
-      colorClass: 'green-footer',
+      colorClass: 'green-header',
       logoName: 'Krishvana Infra',
       imgTitle: 'Mining',
       bullets: [
@@ -67,13 +67,27 @@ export function Companies() {
       name: 'Krishvana Flour',
       fullName: 'Krishvana Global Grains Private Limited',
       role: '- Director',
-      colorClass: 'olive-footer',
+      colorClass: 'olive-header',
       logoName: 'Krishvana Flour',
       imgTitle: 'Farming',
       bullets: [
         'Established global sourcing and trade corridors for premium agricultural products, including grains, flour, and processed items.',
         'Instituted strict quality control and safety protocols to align with international regulatory standards, minimizing product loss.',
         'Drove market penetration and volume growth by establishing distribution partnerships with leading regional wholesalers.'
+      ]
+    },
+    {
+      id: 6,
+      name: 'Hotel KrishVana Inn',
+      fullName: 'Hotel KrishVana Inn',
+      role: '- Proprietor / Partner',
+      colorClass: 'gold-header',
+      logoName: 'Hotel KrishVana Inn',
+      imgTitle: 'Hospitality',
+      bullets: [
+        'Developing a premium boutique hospitality destination, blending modern luxury with sustainable tourism practices.',
+        'Directing guest service operations, staff training, and brand positioning to establish high standards of customer excellence.',
+        'Optimizing property management systems and revenue-generating services to maximize occupancy rates and asset value.'
       ]
     }
   ];
@@ -113,18 +127,18 @@ export function Companies() {
 
                     {/* Expanded View: Always in the DOM, toggled via CSS */}
                     <div className="expanded-content">
+                      <div className={`exp-card-header ${comp.colorClass}`}>
+                        <img src={getLogo(comp.logoName)} alt="Logo" className="header-logo" />
+                        <div className="header-text">
+                          <h4>{comp.fullName}</h4>
+                          <p>{comp.role}</p>
+                        </div>
+                      </div>
                       <img src={getImage(comp.imgTitle)} alt={comp.fullName} className="exp-card-img" />
                       <div className="exp-card-bullets">
                         <ul>
                           {comp.bullets.map((b, i) => <li key={i}>{b}</li>)}
                         </ul>
-                      </div>
-                      <div className={`exp-card-footer ${comp.colorClass}`}>
-                        <img src={getLogo(comp.logoName)} alt="Logo" className="footer-logo" />
-                        <div className="footer-text">
-                          <h4>{comp.fullName}</h4>
-                          <p>{comp.role}</p>
-                        </div>
                       </div>
                     </div>
                   </div>

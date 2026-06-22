@@ -16,6 +16,7 @@ export function Industries() {
       case 'Infrastructure': return '#f59e0b'; // Amber
       case 'Mining': return '#10b981'; // Emerald
       case 'Education': return '#f43f5e'; // Rose
+      case 'Hospitality': return '#e58a2d'; // Signature Gold
       default: return '#cbd5e1';
     }
   };
@@ -27,7 +28,8 @@ export function Industries() {
     { title: 'Shipping & Logistics', imgTitle: 'Ports & Shipping', desc: 'Managing robust global supply chains, freight operations, and custom clearance processes with precision and reliable execution.' },
     { title: 'Infrastructure', imgTitle: 'Infrastructure', desc: 'Developing high-capacity warehousing, storage complexes, and transportation networks to power regional industrial growth.' },
     { title: 'Mining', imgTitle: 'Mining', desc: 'Orchestrating sustainable mineral extraction and resource processing pipelines to fuel industrial manufacturing supply chains.' },
-    { title: 'Education', imgTitle: 'Education', desc: 'Providing professional internships and industry-standard training, alongside planning strategic initiatives in the government sector.' }
+    { title: 'Education', imgTitle: 'Education', desc: 'Providing professional internships and industry-standard training, alongside planning strategic initiatives in the government sector.' },
+    { title: 'Hospitality', imgTitle: 'Hospitality', desc: 'Developing luxury boutique hotel properties and premium guest services under Hotel KrishVana Inn to deliver world-class tourism experiences.' }
   ];
 
   return (

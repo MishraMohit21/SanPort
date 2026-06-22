@@ -8,6 +8,7 @@ import krishnaFlour from '../assets/KrishnaFlourMIll.png';
 import krishvanaFlour from '../assets/KrishvanaFlour.png';
 import krishvanaInfra from '../assets/KrishvanaInfra.png';
 import lunarEdge from '../assets/Lunaredge.png';
+import hotelKrishvanaLogo from '../assets/HotelKrishVanaLogo.svg';
 
 // Education
 import logoSkit from '../assets/logo_skit.png';
@@ -27,6 +28,7 @@ import importExportImg from '../assets/import_export_new_1782139643638.png';
 import flyoverImg from '../assets/infrastructure_new_1782139533397.png';
 import flourMillImg from '../assets/flour_mill_new_1782139595598.png';
 import eduIndustryImg from '../assets/education_new_1782139658084.png';
+import hotelImg from '../assets/hotel_new.png';
 
 // Achievements
 import achGrowth from '../assets/ach_growth_new_1782140653024.png';
@@ -62,7 +64,8 @@ export const content = {
     { id: 2, name: "Krishna Flour Mill", logo: krishnaFlour },
     { id: 3, name: "Krishvana Flour", logo: krishvanaFlour },
     { id: 4, name: "Krishvana Infra", logo: krishvanaInfra },
-    { id: 5, name: "Lunar Edge", logo: lunarEdge }
+    { id: 5, name: "Lunar Edge", logo: lunarEdge },
+    { id: 6, name: "Hotel KrishVana Inn", logo: hotelKrishvanaLogo }
   ],
   industries: [
     { title: "Agriculture", image: agriImg },
@@ -76,7 +79,8 @@ export const content = {
     { title: "Real Estate", image: realEstateImg },
     { title: "Import & Export", image: importExportImg },
     { title: "Infrastructure", image: flyoverImg },
-    { title: "Education", image: eduIndustryImg }
+    { title: "Education", image: eduIndustryImg },
+    { title: "Hospitality", image: hotelImg }
   ],
   achievements: [
     { title: "Growth", image: achGrowth },
