@@ -96,13 +96,13 @@ export function Footer() {
 
               {/* Email quick links */}
               <div className="quick-emails">
-                <a href="mailto:Sandeep.katariya@krishvana.com" className="email-badge">
+                <a href="mailto:Sandeepkatariya@krishvana.com" className="email-badge">
                   <div className="badge-icon">
                     <Mail size={16} />
                   </div>
                   <div className="badge-details">
                     <span className="badge-label">Primary Business</span>
-                    <span className="badge-val">Sandeep.katariya@krishvana.com</span>
+                    <span className="badge-val">Sandeepkatariya@krishvana.com</span>
                   </div>
                 </a>
                 
