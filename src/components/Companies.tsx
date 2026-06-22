@@ -14,10 +14,10 @@ export function Companies() {
       logoName: 'Krishna Flour Mill',
       imgTitle: 'Flour Milling',
       bullets: [
-        'Transformed operations into a modern, eco-friendly setup using sustainable practices and technology.',
-        'Built a strong Sriyan, Nokha and Jaypore brand, driving notable growth in visibility and market share.',
-        'Expanded reach through strategic partnerships, strengthening distribution and customer networks.',
-        'Developed the great supply chain network through distribution'
+        'Modernized milling infrastructure to optimize energy efficiency and implement sustainable agro-processing technologies.',
+        'Scaled the commercial presence of signature brands (Sriyan, Nokha, and Jaypore), significantly boosting market share.',
+        'Established strong distribution partnerships, enhancing value delivery across regional retail and wholesale channels.',
+        'Formulated a robust end-to-end supply chain network to ensure consistent and cost-effective product flow.'
       ]
     },
     {
@@ -29,9 +29,9 @@ export function Companies() {
       logoName: 'Lunar Edge',
       imgTitle: 'IT & Technology',
       bullets: [
-        'Led a 50+ member team delivering innovative IT solutions across multiple industries while expanding operations into the IT sector with consistent annual revenue growth.',
-        'Drove development of proprietary software solutions, enhancing client satisfaction and market differentiation.',
-        'Optimized internal operations through advanced project management tools and streamlined processes with innovations.'
+        'Directed a team of 50+ technical professionals to deliver high-impact enterprise software and IT services across multiple industries.',
+        'Pioneered the development of proprietary digital solutions, establishing key differentiators in a competitive tech landscape.',
+        'Implemented modern project management frameworks and automated workflows to increase project delivery efficiency.'
       ]
     },
     {
@@ -43,9 +43,9 @@ export function Companies() {
       logoName: 'Krish Logix',
       imgTitle: 'Ports & Shipping',
       bullets: [
-        'Built a high-performing domestic and international logistics network, optimizing routes and reducing delivery times while expanding into tier-2 and tier-3 cities.',
-        'Implemented advanced digital tracking systems for Sales Visit, Inquiry & complete shipment visibility, strengthening customer trust and operational transparency.',
-        'Expanded service portfolio and strategic partnerships, introducing multimodal transport solutions and securing long-term contracts that reduced overall freight costs.'
+        'Architected an expansive domestic and international logistics network, optimizing transit routes and expanding market presence in emerging cities.',
+        'Deployed enterprise-grade tracking platforms to provide real-time shipment visibility and enhance operational transparency for clients.',
+        'Diversified service offerings by integrating multimodal transit options and securing long-term partner contracts to reduce freight overhead.'
       ]
     },
     {
@@ -57,9 +57,9 @@ export function Companies() {
       logoName: 'Krishvana Infra',
       imgTitle: 'Mining',
       bullets: [
-        'Directed design and construction of modern agri-storage and processing facilities, delivering turnkey projects that improved supply chain efficiency.',
-        'Championed sustainable construction through energy-efficient designs, eco-friendly materials, and timely, on-budget project completion.',
-        'Strengthened public-private collaborations, securing government contracts and maintaining high-quality standards across large-scale infrastructure projects.'
+        'Oversee the design and construction of high-capacity agri-storage and industrial processing plants, boosting regional supply chain capabilities.',
+        'Pioneered eco-friendly construction standards, prioritizing energy conservation and sustainable materials across all infrastructure projects.',
+        'Cultivated strategic public-private partnerships (PPP) and successfully executed key infrastructure initiatives on budget.'
       ]
     },
     {
@@ -71,9 +71,9 @@ export function Companies() {
       logoName: 'Krishvana Flour',
       imgTitle: 'Farming',
       bullets: [
-        'Developed an international sourcing and export network for premium grains, atta, and maida, while expanding the product range to pulses, cereals, and value-added items.',
-        'Established modern quality control facilities to ensure compliance with global food safety standards and optimized supply chain operations, reducing waste and improving delivery timelines.',
-        'Boosted market share through strategic partnerships with regional wholesalers and retailers.'
+        'Established global sourcing and trade corridors for premium agricultural products, including grains, flour, and processed items.',
+        'Instituted strict quality control and safety protocols to align with international regulatory standards, minimizing product loss.',
+        'Drove market penetration and volume growth by establishing distribution partnerships with leading regional wholesalers.'
       ]
     }
   ];

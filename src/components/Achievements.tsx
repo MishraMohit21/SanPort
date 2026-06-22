@@ -13,8 +13,8 @@ export function Achievements() {
       title: "Leadership Excellence",
       class: "card-leadership",
       color: "#047857",
-      baseText: "Successfully scaled two businesses, each in different sectors, showcasing adaptability and entrepreneurial expertise.",
-      extendedText: "Managed over 100 employees across multiple business divisions. Streamlined inter-corporate relations between LunarEdge IT, Krishlogix shipping, and KrishVana logistics to optimize growth.",
+      baseText: "Successfully scaled multiple businesses across distinct sectors, demonstrating strategic adaptability and entrepreneurial leadership.",
+      extendedText: "Directed operations and strategic alignment for over 100 employees across corporate divisions. Harmonized operational synergies between LunarEdge IT, Krishlogix shipping, and KrishVana logistics to drive sustained organizational growth.",
       imgKey: "Leadership"
     },
     {
@@ -22,8 +22,8 @@ export function Achievements() {
       title: "Operational Milestones",
       class: "card-milestones",
       color: "#be123c",
-      baseText: "Reduced operational costs at Krishna Flour Mill through automation and process optimization.",
-      extendedText: "Integrated modern PLC processing controls and automated packaging lines, improving flour production capacity by 20% while cutting energy waste.",
+      baseText: "Optimized operational efficiency and minimized production costs at Krishna Flour Mill through automation.",
+      extendedText: "Spearheaded the integration of PLC processing controls and automated packaging systems, increasing throughput by 20% while achieving significant energy savings.",
       imgKey: "Milestones"
     },
     {
@@ -31,8 +31,8 @@ export function Achievements() {
       title: "Revenue Growth",
       class: "card-growth",
       color: "#0369a1",
-      baseText: "Increased annual turnover at LunarEdge IT Services through strategic market expansion and innovation.",
-      extendedText: "Directed the software development division to launch state-of-the-art enterprise tracking tools, acquiring 15 high-value corporate clients in the first fiscal year.",
+      baseText: "Drove revenue expansion and market penetration for LunarEdge IT Services through product innovation.",
+      extendedText: "Led the software development division to launch enterprise tracking platforms, securing 15 enterprise-level clients within the first fiscal year.",
       imgKey: "Growth"
     },
     {
@@ -40,8 +40,8 @@ export function Achievements() {
       title: "Industry Recognition",
       class: "card-recognition",
       color: "#0f766e",
-      baseText: "Earned accolades for sustainable business practices and technological contributions in both domains.",
-      extendedText: "Presented at the national Agro Summit on integration of solar-powered silo storage, receiving the Green Enterprise Certificate.",
+      baseText: "Recognized for pioneering sustainable practices and technological contributions across multiple business domains.",
+      extendedText: "Honored at the National Agro Summit for implementing solar-powered storage systems, receiving the Green Enterprise Certification.",
       imgKey: "Trophy"
     },
     {
@@ -49,8 +49,8 @@ export function Achievements() {
       title: "Innovation Champion",
       class: "card-innovation",
       color: "#6b21a8",
-      baseText: "Launched new products/services at LunarEdge IT Services, resulting in increased market share.",
-      extendedText: "Pioneered development of AI-driven supply chain trackers used across partner companies to track sales, shipping routes, and product freshness.",
+      baseText: "Introduced advanced digital services at LunarEdge IT Services to capture new market opportunities.",
+      extendedText: "Pioneered the deployment of AI-driven supply chain tracking systems used across portfolio companies to optimize routing, sales reporting, and quality control.",
       imgKey: "Innovation"
     }
   ];

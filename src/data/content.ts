@@ -15,17 +15,18 @@ import logoSorbon from '../assets/logo_sorbon.png';
 import eduPillar from '../assets/educationbookspillar.png';
 
 // Industries
-import agriImg from '../assets/Agriculture.png';
-import itOfficeImg from '../assets/IToffice.png';
-import robotFactoryImg from '../assets/roboticFactory.png';
-import techAgriImg from '../assets/techAgri.png';
-import wheatImg from '../assets/wheatfieldIllustration.png';
-import mineImg from '../assets/minesite.png';
-import portImg from '../assets/portships.png';
-import realEstateImg from '../assets/industry_realestate.png';
-import importExportImg from '../assets/importExprt.png';
-import flyoverImg from '../assets/flyover.png';
-import flourMillImg from '../assets/flourmillillustration.png';
+import agriImg from '../assets/agriculture_new_1782139487894.png';
+import itOfficeImg from '../assets/it_office_new_1782139552399.png';
+import robotFactoryImg from '../assets/manufacturing_new_1782139506959.png';
+import techAgriImg from '../assets/agri_tech_new_1782139562816.png';
+import wheatImg from '../assets/wheat_farming_new_1782139608484.png';
+import mineImg from '../assets/mining_new_1782139574414.png';
+import portImg from '../assets/port_new_1782139519750.png';
+import realEstateImg from '../assets/real_estate_new_1782139622799.png';
+import importExportImg from '../assets/import_export_new_1782139643638.png';
+import flyoverImg from '../assets/infrastructure_new_1782139533397.png';
+import flourMillImg from '../assets/flour_mill_new_1782139595598.png';
+import eduIndustryImg from '../assets/education_new_1782139658084.png';
 
 // Achievements
 import achGrowth from '../assets/achievement_growth.png';
@@ -74,7 +75,8 @@ export const content = {
     { title: "Ports & Shipping", image: portImg },
     { title: "Real Estate", image: realEstateImg },
     { title: "Import & Export", image: importExportImg },
-    { title: "Infrastructure", image: flyoverImg }
+    { title: "Infrastructure", image: flyoverImg },
+    { title: "Education", image: eduIndustryImg }
   ],
   achievements: [
     { title: "Growth", image: achGrowth },

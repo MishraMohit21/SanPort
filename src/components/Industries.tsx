@@ -13,7 +13,6 @@ export function Industries() {
       case 'Agro Trading': return '#06b6d4'; // Cyan
       case 'Manufacturing': return '#f97316'; // Orange
       case 'Shipping & Logistics': return '#818cf8'; // Indigo
-      case 'Renewable Energy': return '#0ea5e9'; // Blue/Sky
       case 'Infrastructure': return '#f59e0b'; // Amber
       case 'Mining': return '#10b981'; // Emerald
       case 'Education': return '#f43f5e'; // Rose
@@ -22,14 +21,13 @@ export function Industries() {
   };
 
   const displayIndustries = [
-    { title: 'Agriculture', imgTitle: 'Agriculture', desc: 'Specializing in organic grain sourcing, modern crop rotation, and smart farming systems.' },
-    { title: 'Agro Trading', imgTitle: 'Agri-Tech', desc: 'Managing wholesale commodity trade networks for grains, flour, and processed items globally.' },
-    { title: 'Manufacturing', imgTitle: 'Manufacturing', desc: 'Operating high-throughput roller flour mills and automated agricultural processing systems.' },
-    { title: 'Shipping & Logistics', imgTitle: 'Ports & Shipping', desc: 'Managing end-to-end freight distribution, transport logistics, and custom clearing operations.' },
-    { title: 'Renewable Energy', imgTitle: 'Farming', desc: 'Integrating solar grids to power roller mills and storage silos, cutting raw power overheads.' },
-    { title: 'Infrastructure', imgTitle: 'Infrastructure', desc: 'Constructing modern high-capacity warehouses, transport depots, and storage facilities.' },
-    { title: 'Mining', imgTitle: 'Mining', desc: 'Managing mineral extraction sites and processing chains to supply high-quality industrial inputs.' },
-    { title: 'Education', imgTitle: 'Flour Milling', desc: 'Fostering research in sustainable agriculture technologies and industrial milling sciences.' }
+    { title: 'Agriculture', imgTitle: 'Agriculture', desc: 'Driving innovation in sustainable agribusiness through modern cultivation techniques, smart farming integration, and resource optimization.' },
+    { title: 'Agro Trading', imgTitle: 'Agri-Tech', desc: 'Facilitating international trade networks with high-efficiency distribution systems for premium agricultural commodities and processed goods.' },
+    { title: 'Manufacturing', imgTitle: 'Manufacturing', desc: 'Operating state-of-the-art milling facilities and automated processing systems to ensure production excellence and strict quality standards.' },
+    { title: 'Shipping & Logistics', imgTitle: 'Ports & Shipping', desc: 'Managing robust global supply chains, freight operations, and custom clearance processes with precision and reliable execution.' },
+    { title: 'Infrastructure', imgTitle: 'Infrastructure', desc: 'Developing high-capacity warehousing, storage complexes, and transportation networks to power regional industrial growth.' },
+    { title: 'Mining', imgTitle: 'Mining', desc: 'Orchestrating sustainable mineral extraction and resource processing pipelines to fuel industrial manufacturing supply chains.' },
+    { title: 'Education', imgTitle: 'Education', desc: 'Providing professional internships and industry-standard training, alongside planning strategic initiatives in the government sector.' }
   ];
 
   return (

@@ -36,7 +36,7 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <p className="about-paragraph">
-              Dr. Sandeep Katariya, PhD (Philosophiae Doctor) in Innovation in Agro Products — specializing in Production & Supply Chain — blends academic excellence with over 15 years of cross-industry experience. A seasoned entrepreneur, he is a transformative leader focused on driving growth, innovation, and sustainable business practices.
+              Dr. Sandeep Katariya, PhD in Innovation in Agro Products — specializing in Production & Supply Chain Management — seamlessly integrates advanced academic research with over 15 years of leadership across diverse industries. As an established entrepreneur and visionary executive, he specializes in building scalable enterprises, driving operational excellence, and implementing sustainable business practices.
             </p>
 
             <motion.div
@@ -46,10 +46,10 @@ export function About() {
               style={{ overflow: 'hidden' }}
             >
               <p className="about-paragraph">
-                With deep expertise in agriculture manufacturing and supply chain management, Dr. Sandeep champions organic farming and the use of modern technology such as IoT-based monitoring, precision farming, and smart logistics. His vision is to integrate traditional farming wisdom with cutting-edge solutions to boost productivity, profitability, and environmental sustainability.
+                With deep expertise in agricultural manufacturing and global supply chains, Dr. Katariya champions sustainable agro-industrial systems. His initiatives incorporate advanced methodologies such as IoT-enabled monitoring, precision agricultural technologies, and optimized logistics networks. His operational philosophy focuses on merging traditional sector knowledge with modern technology to enhance productivity, commercial viability, and environmental stewardship.
               </p>
               <p className="about-paragraph" style={{ marginBottom: 0 }}>
-                He is Partner/Owner at Krishna Flour Mill and Director of KrishVana Global Gains Pvt Ltd, KrishVana Infrastructure Pvt Ltd, Krishlogix Pvt Ltd, and LunarEdge IT Services Pvt Ltd — building enterprises that merge technical know-how with business leadership to deliver long-term value for communities and stakeholders.
+                Currently serving as Partner at Krishna Flour Mill and Director of KrishVana Global Gains Pvt Ltd, KrishVana Infrastructure Pvt Ltd, Krishlogix Pvt Ltd, and LunarEdge IT Services Pvt Ltd, he drives the strategic vision of these enterprises, cultivating high-value partnerships and delivering sustainable returns for all stakeholders.
               </p>
             </motion.div>
 
