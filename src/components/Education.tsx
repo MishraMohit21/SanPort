@@ -29,17 +29,6 @@ export function Education() {
       color: "#4ade80",
       logoBg: "#ffffff", // SKIT White
       details: "Studied core mechanical engineering disciplines including machine design, operations management, thermodynamics, and automation systems. Lead engineer for final year pneumatic material handling design project."
-    },
-    {
-      id: 2,
-      title: "Corporate Training & Internships",
-      major: "Industry-Standard Skill Development",
-      year: "Active",
-      institution: "Mentorship & Govt Sector Initiatives",
-      logo: content.education.items[0].logo, // Sorbon Logo
-      color: "#60a5fa",
-      logoBg: "#1e293b",
-      details: "Spearheading student internship and vocational training programs structured around global industry standards. Actively developing strategic plans to collaborate with government agencies and state institutions for regional capacity-building."
     }
   ];
 
